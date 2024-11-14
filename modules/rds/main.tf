@@ -1,13 +1,13 @@
 resource "aws_db_instance" "postgres" {
-  allocated_storage      = 20
-  storage_type           = "gp2"
+  allocated_storage      = var.db_allocated_storage
   engine                 = "postgres"
-  engine_version         = "12.3"
-  instance_class         = "db.t3.micro"
-  db_name                = "mydb"
-  username               = var.rds_username
-  password               = var.rds_password
-  publicly_accessible    = false
-  vpc_security_group_ids = [var.rds_security_group]
-  db_subnet_group_name   = var.private_subnet_id
+  engine_version         = var.engine_version
+  instance_class         = var.db_instance_class
+  db_name                = var.db_name
+  username               = var.db_username
+  password               = var.db_password
+  multi_az               = var.multi_az
+  skip_final_snapshot    = true
+  vpc_security_group_ids = [var.security_group]
+  publicly_accessible    = var.db_public_access
 }

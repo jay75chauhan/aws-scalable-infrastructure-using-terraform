@@ -1,51 +1,19 @@
-resource "aws_vpc" "custom_vpc" {
-  cidr_block = var.vpc_cidr_block
+resource "aws_vpc" "custom" {
+  cidr_block           = var.vpc_cidr_block
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  tags                 = { Name = "custom_vpc" }
 }
 
-resource "aws_subnet" "public_subnet" {
-  vpc_id                  = aws_vpc.custom_vpc.id
+resource "aws_subnet" "public" {
+  vpc_id                  = aws_vpc.custom.id
   cidr_block              = var.public_subnet_cidr
   map_public_ip_on_launch = true
+  tags                    = { Name = "public_subnet" }
 }
 
-resource "aws_subnet" "private_subnet" {
-  vpc_id     = aws_vpc.custom_vpc.id
+resource "aws_subnet" "private" {
+  vpc_id     = aws_vpc.custom.id
   cidr_block = var.private_subnet_cidr
-}
-
-resource "aws_security_group" "ec2_sg" {
-  vpc_id = aws_vpc.custom_vpc.id
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
-
-resource "aws_security_group" "rds_sg" {
-  vpc_id = aws_vpc.custom_vpc.id
-
-  # Allow incoming traffic on port 5432 from EC2 security group
-  ingress {
-    from_port       = 5432
-    to_port         = 5432
-    protocol        = "tcp"
-    security_groups = [aws_security_group.ec2_sg.id]
-  }
+  tags       = { Name = "private_subnet" }
 }

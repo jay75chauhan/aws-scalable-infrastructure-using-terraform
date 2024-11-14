@@ -1,14 +1,13 @@
-resource "aws_instance" "nginx_instance" {
-  ami           = "ami-08bf489a05e916bbd"  # Ubuntu AMI in ap-south-1
-  instance_type = "t3.micro"
+resource "aws_instance" "web" {
   count         = var.instance_count
+  ami           = var.ami_id
+  instance_type = var.instance_type
   subnet_id     = var.subnet_id
+  key_name      = var.key_name
 
-  vpc_security_group_ids = [var.ec2_security_group]
+  user_data = var.user_data
 
-  user_data = <<-EOF
-              #!/bin/bash
-              apt update -y
-              apt install nginx -y
-              EOF
+  tags = {
+    Name = "web-server-${count.index}"
+  }
 }
