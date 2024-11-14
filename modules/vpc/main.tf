@@ -41,6 +41,7 @@ resource "aws_security_group" "ec2_sg" {
 resource "aws_security_group" "rds_sg" {
   vpc_id = aws_vpc.custom_vpc.id
 
+  # Allow incoming traffic on port 5432 from EC2 security group
   ingress {
     from_port       = 5432
     to_port         = 5432

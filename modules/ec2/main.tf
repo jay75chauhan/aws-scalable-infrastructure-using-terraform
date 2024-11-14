@@ -1,5 +1,5 @@
 resource "aws_instance" "nginx_instance" {
-  ami           = "ami-0c55b159cbfafe1f0"  # Ubuntu AMI in ap-south-1
+  ami           = "ami-08bf489a05e916bbd"  # Ubuntu AMI in ap-south-1
   instance_type = "t3.micro"
   count         = var.instance_count
   subnet_id     = var.subnet_id
