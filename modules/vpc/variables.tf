@@ -17,3 +17,19 @@ variable "private_subnet_cidr" {
   description = "CIDR block for private subnet"
   type        = string
 }
+
+variable "private_subnet_cidr_1" {
+  description = "CIDR block for private subnet"
+  type        = string
+}
+
+
+variable "availability_zone" {
+  description = "Availability zone for the subnets"
+  default     = "ap-south-1a"
+}
+
+variable "availability_zone_1" {
+  description = "Availability zone for the subnets"
+  default     = "ap-south-1b"
+}

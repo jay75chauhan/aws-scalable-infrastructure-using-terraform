@@ -25,7 +25,7 @@ variable "db_instance_class" {
   default     = "db.t3.micro"
 }
 
-variable "db_allocated_storage" {
+variable "allocated_storage" {
   description = "Allocated storage in GB for RDS"
   type        = number
   default     = 20
@@ -54,6 +54,12 @@ variable "db_public_access" {
   type        = bool
   default     = false
 }
+
+variable "db_subnet_group_name" {
+  description = "The DB subnet group name for the RDS instance"
+  type        = string
+}
+
 
 variable "security_group" {
   description = "Security group ID for RDS access"

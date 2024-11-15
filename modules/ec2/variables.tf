@@ -3,10 +3,7 @@ variable "subnet_id" {
   type        = string
 }
 
-variable "key_name" {
-  description = "SSH key name to access EC2 instances"
-  type        = string
-}
+
 
 variable "instance_count" {
   description = "Number of EC2 instances to launch"
@@ -30,3 +27,11 @@ variable "user_data" {
   description = "User data script to configure instances on launch"
   type        = string
 }
+
+
+
+variable "security_groups" {
+  description = "List of security group IDs to associate with EC2 instances"
+  type        = list(string)
+}
+

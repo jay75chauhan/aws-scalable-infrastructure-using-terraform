@@ -10,5 +10,5 @@ output "s3_bucket_names" {
 
 output "rds_endpoint" {
   description = "RDS PostgreSQL endpoint"
-  value       = module.rds.db_endpoint
+  value       = module.rds.endpoint
 }

@@ -22,10 +22,12 @@ variable "private_subnet_cidr" {
   default     = "10.0.2.0/24"
 }
 
-variable "key_name" {
-  description = "SSH key name to access EC2 instances"
+variable "private_subnet_cidr_1" {
+  description = "CIDR block for private subnet"
   type        = string
+  default     = "10.0.3.0/24"
 }
+
 
 variable "instance_type" {
   description = "EC2 instance type"
