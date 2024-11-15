@@ -1,4 +1,4 @@
-#AWS Scalable Web Application Infrastructure with Terraform
+### AWS Scalable Web Application Infrastructure with Terraform
 
 This repository provides a fully automated, scalable infrastructure deployment on AWS using Terraform. It includes configurations for EC2 instances, RDS, VPC setup, S3 storage, and networking. The infrastructure is designed to deploy a web application with three EC2 instances, an RDS PostgreSQL database, and necessary networking components.
 
