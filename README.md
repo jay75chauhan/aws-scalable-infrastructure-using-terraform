@@ -1,4 +1,4 @@
-# AWS Scalable Web Application Infrastructure with Terraform
+#AWS Scalable Web Application Infrastructure with Terraform
 
 This repository provides a fully automated, scalable infrastructure deployment on AWS using Terraform. It includes configurations for EC2 instances, RDS, VPC setup, S3 storage, and networking. The infrastructure is designed to deploy a web application with three EC2 instances, an RDS PostgreSQL database, and necessary networking components.
 
@@ -140,6 +140,10 @@ terraform apply
 
 Terraform will show a plan of the changes it will make. Type yes to approve the changes.
 
+Output
+
+![1731652049930](images/README/1731652049930.png)
+
 6. Test the EC2 to RDS Connectivity
    Once logged into the EC2 instance, you can test the database connection using psql:
 
@@ -147,16 +151,16 @@ Terraform will show a plan of the changes it will make. Type yes to approve the 
 psql -h <rds-endpoint> -U <db-username> -d <db-name>
 ```
 
-If successful, you'll be connected to the PostgreSQL database.
+![1731652016741](images/README/1731652016741.png)If successful, you'll be connected to the PostgreSQL database.
 
 ## Resources Created
 
 The following AWS resources will be provisioned by Terraform:
 
-- VPC with public and private subnets.
-- 3 EC2 Instances running Ubuntu and Nginx.
-- 3 S3 Buckets in the ap-south-1 region.
-- RDS PostgreSQL instance with a private IP.
+- VPC with public and private subnets.![1731652077942](images/README/1731652077942.png)
+- 3 EC2 Instances running Ubuntu and Nginx.![1731652089565](images/README/1731652089565.png)![1731652167337](images/README/1731652167337.png)
+- 3 S3 Buckets in the ap-south-1 region.![1731652119520](images/README/1731652119520.png)
+- RDS PostgreSQL instance with a private IP.![1731652136243](images/README/1731652136243.png)
 
 ## Cleanup
 
