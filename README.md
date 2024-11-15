@@ -171,3 +171,19 @@ terraform destroy
 ```
 
 This will prompt you to confirm that you want to delete all resources. Type yes to confirm.
+
+## License
+
+- This project is licensed under the MIT License - see the LICENSE file for details.
+
+Author
+
+- @jay75chauhan
+
+## Contributing
+
+- Fork the repository.
+- Create a new branch (git checkout -b feature-xyz).
+- Commit your changes (git commit -am 'Add new feature').
+- Push to the branch (git push origin feature-xyz).
+- Open a pull request.
