@@ -123,10 +123,9 @@ multi_az             = false
 rds_engine_version   = "16.3"
 db_public_access     = false
 
-
 ```
 
-      db_username and db_password: Used to configure your PostgreSQL database.
+db_username and db_password: Used to configure your PostgreSQL database.
 
 4. Initialize Terraform
    Before applying the Terraform configuration, initialize your Terraform environment to download the necessary providers:
@@ -142,7 +141,7 @@ terraform init
 terraform apply
 ```
 
-         Terraform will show a plan of the changes it will make. Type yes to approve the changes.
+Terraform will show a plan of the changes it will make. Type yes to approve the changes.
 
 6. Test the EC2 to RDS Connectivity
    Once logged into the EC2 instance, you can test the database connection using psql:
