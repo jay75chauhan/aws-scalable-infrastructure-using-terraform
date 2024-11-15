@@ -87,9 +87,8 @@ db_public_access = false
    To begin, clone the repository to your local machine:
 
 ```
-git clone https://github.com/your-username/aws-web-app-terraform.git
-cd aws-web-app-terraform
-
+git clone https://github.com/jay75chauhan/aws-scalable-infrastructure-using-terraform
+cd aws-scalable-infrastructure-using-terraform
 ```
 
 2. Configure AWS Credentials
@@ -97,7 +96,6 @@ cd aws-web-app-terraform
 
 ```
 aws configure
-
 ```
 
 3. Configure Variables
@@ -122,7 +120,6 @@ db_backup_retention  = 7
 multi_az             = false
 rds_engine_version   = "16.3"
 db_public_access     = false
-
 ```
 
 db_username and db_password: Used to configure your PostgreSQL database.
